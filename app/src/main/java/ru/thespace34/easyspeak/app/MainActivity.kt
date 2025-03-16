@@ -5,12 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import ru.thespace34.easyspeak.app.ui.theme.EasySpeakTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +20,52 @@ class MainActivity : ComponentActivity() {
         setContent {
             EasySpeakTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
                 }
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    @Composable
+    fun BottomNavigationBar(){
+        BottomNavigation(
+            contentColor = MaterialTheme.colorScheme.primary,
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    EasySpeakTheme {
-        Greeting("Android")
+            ) {
+            BottomNavigationItem(
+                icon = {
+                    ImageVector.vectorResource(id = R.drawable.ic_mic),
+                    contentDescription = 'Chat',
+                },
+                selected = false,
+                onClick = {
+
+                }
+
+            )
+
+        }
+
+
+        BottomNavigation(
+            contentColor = MaterialTheme.colorScheme.primary,
+
+            ) {
+            BottomNavigationItem(
+                icon = {
+                    ImageVector.vectorResource(id = R.drawable.ic_mic),
+                    contentDescription = 'Chat',
+                },
+                selected = false,
+                onClick = {
+
+                }
+
+            )
+
+        }
     }
 }
+
+
+
