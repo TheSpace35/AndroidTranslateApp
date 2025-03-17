@@ -5,8 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -19,52 +21,74 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             EasySpeakTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                
+  
 
-                }
             }
         }
     }
-
     @Composable
     fun BottomNavigationBar(){
         BottomNavigation(
             contentColor = MaterialTheme.colorScheme.primary,
-
-            ) {
+        ){
             BottomNavigationItem(
                 icon = {
-                    ImageVector.vectorResource(id = R.drawable.ic_mic),
-                    contentDescription = 'Chat',
+                    Icon(ImageVector.vectorResource(id = R.drawable.ic_mic), contentDescription = 'Chat' )
+
                 },
                 selected = false,
                 onClick = {
 
                 }
-
             )
 
-        }
-
-
-        BottomNavigation(
-            contentColor = MaterialTheme.colorScheme.primary,
-
-            ) {
             BottomNavigationItem(
                 icon = {
-                    ImageVector.vectorResource(id = R.drawable.ic_mic),
-                    contentDescription = 'Chat',
+                    Icon(ImageVector.vectorResource(id = R.drawable.ic_mic), contentDescription = 'Chat' )
+
                 },
                 selected = false,
                 onClick = {
 
                 }
+            )
+            BottomNavigationItem(
+                icon = {
+                    Icon(ImageVector.vectorResource(id = R.drawable.ic_mic), contentDescription = 'Chat' )
 
+                },
+                selected = false,
+                onClick = {
+
+                }
+            )
+            BottomNavigationItem(
+                icon = {
+                    Icon(ImageVector.vectorResource(id = R.drawable.ic_mic), contentDescription = 'Chat' )
+
+                },
+                selected = false,
+                onClick = {
+
+                }
+            )
+            BottomNavigationItem(
+                icon = {
+                    Icon(ImageVector.vectorResource(id = R.drawable.ic_mic), contentDescription = 'Chat' )
+
+                },
+                selected = false,
+                onClick = {
+
+                }
             )
 
+
         }
+
     }
+    
 }
 
 
